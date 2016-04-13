@@ -139,3 +139,23 @@ function mailing($to,$from,$sub,$mes,$att=null){
     }
     $e->sendmail();
 }
+
+/*
+ * authentication
+ * #params:
+ *      $user - string, user's email or username(depends on users table column)
+ *      $password - string, user's password
+ *      $success - string, url to redirect when authentication is confirmed
+ *      $fail - string, url to redirect when authentication fails
+ *
+ * #return: redirection to specified url, if authenticated - goes to $success url, else - goes to $fail url
+ */
+function authenticate($user,$password,$success,$fail){
+    $a = new Auth();
+    $a->user = $user;
+    $a->password = $password;
+    $a->success_url = $success;
+    $a->fail_url = $fail;
+
+    $a->redirect();
+}
