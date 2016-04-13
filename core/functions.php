@@ -148,7 +148,9 @@ function mailing($to,$from,$sub,$mes,$att=null){
  *      $success - string, url to redirect when authentication is confirmed
  *      $fail - string, url to redirect when authentication fails
  *
- * #return: redirection to specified url, if authenticated - goes to $success url, else - goes to $fail url
+ * #return: redirection to specified url, if authenticated - goes to $success url,
+ *          else - goes to $fail url. Also, populate session data with user id and role
+ *          $_SESSION['USER_ID'] and $_SESSION['USER_ROLE']
  */
 function authenticate($user,$password,$success,$fail){
     $a = new Auth();
