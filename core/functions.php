@@ -11,11 +11,11 @@
  * #params 
  * #return - void
  */
-function header(){
-    require_once MVC_PATH.'inc/header.php';
+function get_header(){
+    require_once 'inc/header.php';
 }
-function footer(){
-    require_once MVC_PATH.'inc/footer.php';
+function get_footer(){
+    require_once 'inc/footer.php';
 }
 
 /*
